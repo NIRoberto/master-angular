@@ -1,17 +1,37 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+interface Course {
+  id: number;
+  name: string;
+  description: string;
+  duration: string;
+}
 
 @Component({
-  selector: 'app-courses',
-  imports: [NgFor, RouterModule],
-
-  templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css'],
+  selector: 'app-courses-details',
+  imports: [],
+  templateUrl: './courses-details.component.html',
+  styleUrl: './courses-details.component.css',
 })
-export class CoursesComponent {
-  title = 'Explore Our Top Courses';
-  courses = [
+export class CoursesDetailsComponent {
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  course: Observable<Course | undefined> | undefined;
+  courseId: number | string | any;
+  courseDetails: Course | undefined;
+
+  ngOnInit() {
+    this.courseId = this.route.snapshot.paramMap.get('id');
+    console.log(this.courseId);
+    this.courseDetails = this.courses.find(
+      (course) => course.id === Number(this.courseId)
+    );
+  }
+
+  courses: Course[] = [
     {
       id: 1,
       name: 'Web Development Bootcamp',

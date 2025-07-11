@@ -1,2 +1,27 @@
-<h1>master angular for beginners</h1>
-<app-courses> </app-courses>
+<!-- Navigation Bar -->
+<nav class="bg-blue-600 text-white shadow-md">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="text-xl font-bold">My Angular App</a>
+    <ul class="flex space-x-6">
+      <li>
+        <a routerLink="/" class="hover:text-gray-200">Home</a>
+      </li>
+      <li>
+        <a routerLink="/courses" class="hover:text-gray-200">Courses</a>
+      </li>
+      <li>
+        <a routerLink="/contact" class="hover:text-gray-200">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Main Content Rendered by Router -->
+<div class="container min-h-s mx-auto mt-8 px-4">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4 mt-8">
+  <p>&copy; 2024 My Angular App. All Rights Reserved.</p>
+</footer>

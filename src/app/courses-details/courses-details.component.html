@@ -1,0 +1,46 @@
+<section class="py-12 bg-gray-50">
+  <div
+    class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+  >
+    <h1 class="text-4xl font-bold text-blue-600 mb-4">
+      {{ courseDetails?.name }}
+    </h1>
+    <p class="text-gray-600 mb-6">
+      {{ courseDetails?.duration }}
+    </p>
+    <div class="space-y-4">
+      <!-- Course Title -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-800">Course Title:</h2>
+        <p class="text-gray-600">{{ courseDetails?.name }}</p>
+      </div>
+      <!-- Course Description -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-800">Description:</h2>
+        <p class="text-gray-600">
+          {{ courseDetails?.description }}
+        </p>
+      </div>
+      <!-- Course Duration -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-800">Duration:</h2>
+        <p class="text-gray-600">
+          {{ courseDetails?.duration }}
+        </p>
+      </div>
+      <!-- Course Instructor -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-800">Instructor:</h2>
+        <p class="text-gray-600">John Doe - Senior Software Engineer</p>
+      </div>
+      <!-- Enroll Button -->
+      <div class="text-center mt-6">
+        <button
+          class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-700 transition"
+        >
+          Enroll Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
